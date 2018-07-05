@@ -28,5 +28,14 @@ class BinaryTranslator
       "y" => "011001",
       "z" => "011010"
     }
+    @string_to_translate = ""
+  end
+
+  def string_to_translate
+    @string_to_translate
+  end
+
+  def translate(string_to_translate)
+    @alpha_to_binary.invert
   end
 end
