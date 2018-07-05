@@ -1,5 +1,8 @@
 class BinaryTranslator
-  def initialize
+  attr_reader :string
+# idea: if input string = @alpha_to_binary.key, then translate (using .inver)
+  def initialize(string)
+    @string = string
     @alpha_to_binary = {
       "a" => "000001",
       "b" => "000010",
@@ -28,14 +31,12 @@ class BinaryTranslator
       "y" => "011001",
       "z" => "011010"
     }
-    @string_to_translate = ""
-  end
 
-  def string_to_translate
-    @string_to_translate
-  end
+    @alpha_to_binary.find do |letter|
+      letter == string
+    end
 
-  def translate(string_to_translate)
-    @alpha_to_binary.invert
+    translate = alpha_to_binary.invert[@string]
+    return translate
   end
 end
