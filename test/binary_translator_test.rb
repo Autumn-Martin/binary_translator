@@ -8,11 +8,11 @@ class BinaryTranslatorTest < Minitest::Test
     assert_instance_of BinaryTranslator, bt
   end
 
-  # def test_can_translate_first_letter
-  #   bt = BinaryTranslator.new
-  #   assert_equal "000001", bt.translate("a")
-  # end
-  #
+  def test_can_translate_first_letter
+    bt = BinaryTranslator.new
+    assert_equal "000001", bt.translate("a")
+  end
+
   # def test_can_translate_last_letter
   #   bt = BinaryTranslator.new
   #   assert_equal "011010", bt.translate("z")
@@ -38,4 +38,13 @@ class BinaryTranslatorTest < Minitest::Test
   #   assert_equal " ", bt.translate("000000")
   # end
   #
+  # def test_ignores_symbols
+  #   bt = BinaryTranslator.new
+  #   assert_equal "", bt.translate("!@{$#%^&*()}")
+  # end
+  #
+  # def test_ignores_symbols_around_words
+  #   bt = BinaryTranslator.new
+  #   assert_equal "001000000101001100001100001111000000010111001111010010001100000100", bt.translate("Hello World!")
+  # end
 end
